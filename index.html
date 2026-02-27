@@ -327,11 +327,58 @@ font-size:14px;
 /* RESPONSIVE */
 
 @media(max-width:900px){
-.hero-wrapper{flex-direction:column;text-align:center;}
-.hero-text h2{font-size:42px;}
-.hero-text h3{font-size:22px;}
-.hero-text p{font-size:18px;}
-.hero-image img{max-width:300px;}
+
+/* Fix nav spacing */
+nav{
+padding:15px 6%;
+}
+
+nav ul{
+gap:18px;
+}
+
+/* Fix hero layout */
+.hero{
+padding-top:120px;   /* pushes content below fixed nav */
+padding-bottom:80px;
+min-height:auto;     /* prevents cropping */
+}
+
+.hero-wrapper{
+flex-direction:column;
+text-align:center;
+gap:40px;
+}
+
+.hero-text h2{
+font-size:38px;
+margin-top:20px;
+}
+
+.hero-text h3{
+font-size:20px;
+}
+
+.hero-text p{
+font-size:17px;
+}
+
+.credentials{
+font-size:14px;
+}
+
+/* Smaller image */
+.hero-image img{
+max-width:280px;
+}
+
+/* Reduce animation size for mobile */
+.hero::before{
+width:150%;
+height:150%;
+animation:spin 25s linear infinite;
+}
+
 }
 
 </style>
@@ -567,10 +614,17 @@ The final prompt workflow significantly reduced editing time, improved structura
 
 <footer>
 <p>
-<a href="#">LinkedIn</a> |
-<a href="mailto:your@email.com">Email</a>
+<a href="https://www.linkedin.com/in/agnieszka-ba%C5%82dyga-gorzkowski-09a44327a/" target="_blank">
+LinkedIn
+</a> |
+<a href="mailto:agnieszkabaldyga7@gmail.com">
+agnieszkabaldyga7@gmail.com
+</a>
 </p>
-<p>© 2026 Agnieszka Bałdyga-Gorzkowski. All rights reserved.</p>
+
+<p style="margin-top:20px;">
+© 2026 Agnieszka Bałdyga-Gorzkowski. All rights reserved.
+</p>
 </footer>
 
 <script>
