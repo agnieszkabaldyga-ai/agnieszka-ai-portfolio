@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agnieszka Bałdyga-Gorzkowski | AI Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--navy:#0b1120;
+--accent:#3b82f6;
+--white:#ffffff;
+--light:#f1f5f9;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--navy);}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+background:rgba(11,17,32,0.85);
+backdrop-filter:blur(8px);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+nav h1{color:var(--white);}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+nav a{
+color:var(--white);
+text-decoration:none;
+font-size:14px;
+opacity:0.8;
+transition:0.3s;
+}
+
+nav a:hover{
+opacity:1;
+color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:0 8%;
+color:var(--white);
+overflow:hidden;
+background:radial-gradient(circle at 20% 30%, #1e293b 0%, #0b1120 60%, #020617 100%);
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(
+120deg,
+transparent 0%,
+rgba(59,130,246,0.08) 40%,
+transparent 70%
+);
+animation:spin 14s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+.hero-wrapper{
+position:relative;
+z-index:2;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+width:100%;
+}
+
+.hero-text{flex:1;}
+
+.hero-text h2{
+font-size:60px;
+font-weight:800;
+margin-bottom:20px;
+line-height:1.05;
+}
+
+.hero-text h3{
+font-size:28px;
+font-weight:600;
+margin-bottom:35px;
+color:var(--accent);
+}
+
+.hero-text p{
+font-size:20px;
+line-height:1.8;
+margin-bottom:35px;
+max-width:650px;
+}
+
+.credentials{
+font-size:16px;
+opacity:0.85;
+line-height:1.6;
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:380px;
+border-radius:14px;
+box-shadow:0 0 40px rgba(59,130,246,0.25);
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 8%;
+}
+
+.section-title{
+font-size:40px;
+font-weight:800;
+margin-bottom:30px;
+}
+
+/* Better paragraph spacing */
+section p{
+margin-bottom:25px;
+line-height:1.8;
+}
+
+/* Slight separation between stacked titles */
+.section-title + .section-title{
+margin-top:50px;
+}
+
+.light{
+background:var(--light);
+}
+/* PROJECT GRID */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+margin-top:50px;
+}
+
+.project-card{
+background:var(--white);
+padding:35px;
+border-radius:18px;
+border:1px solid rgba(59,130,246,0.15);
+transition:all 0.3s ease;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(59,130,246,0.25);
+border:1px solid rgba(59,130,246,0.4);
+}
+
+.project-card h3{
+margin-bottom:15px;
+font-size:20px;
+}
+
+.project-card p{
+font-size:15px;
+margin-bottom:15px;
+line-height:1.6;
+}
+
+.project-card a{
+text-decoration:none;
+color:var(--accent);
+font-weight:600;
+}
+
+/* Force links to always stay blue */
+.project-card a:visited{
+color:var(--accent);
+}
+
+/* PROMPT LIBRARY */
+
+.prompt-category{
+margin-bottom:25px;
+}
+
+.accordion{
+width:100%;
+background:var(--navy);
+color:var(--white);
+padding:20px;
+border:none;
+text-align:left;
+font-size:18px;
+cursor:pointer;
+border-radius:12px;
+transition:all 0.3s ease;
+}
+
+.accordion:hover{
+background:#111827;
+box-shadow:0 0 20px rgba(59,130,246,0.3);
+}
+
+.panel{
+display:none;
+background:#0f172a;
+color:#ffffff;
+padding:25px;
+margin-top:10px;
+border-radius:12px;
+border:1px solid rgba(59,130,246,0.2);
+}
+
+.panel pre{
+white-space:pre-wrap;
+font-family:monospace;
+font-size:14px;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.copy-btn{
+background:var(--accent);
+color:white;
+border:none;
+padding:10px 18px;
+cursor:pointer;
+border-radius:6px;
+font-size:14px;
+transition:0.2s;
+}
+
+.copy-btn:hover{
+box-shadow:0 0 15px rgba(59,130,246,0.5);
+}
+
+
+/* CASE STUDY */
+
+.case-container{
+max-width:900px;
+}
+
+.case-subtitle{
+font-size:22px;
+margin-top:40px;
+margin-bottom:15px;
+color:var(--navy);
+font-weight:600;
+}
+
+.case-list{
+margin-top:15px;
+padding-left:20px;
+line-height:1.8;
+}
+
+/* IN PROGRESS LABEL */
+
+.section-note{
+font-size:14px;
+color:#64748b;
+margin-top:-40px;
+margin-bottom:40px;
+font-style:italic;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--navy);
+color:var(--white);
+padding:60px 8%;
+text-align:center;
+}
+
+footer a{
+color:var(--accent);
+text-decoration:none;
+}
+
+footer p{
+margin-top:15px;
+font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+.hero-wrapper{flex-direction:column;text-align:center;}
+.hero-text h2{font-size:42px;}
+.hero-text h3{font-size:22px;}
+.hero-text p{font-size:18px;}
+.hero-image img{max-width:300px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>ABG</h1>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Example Library</a></li>
+<li><a href="#prompts">Prompt Library</a></li>
+<li><a href="#case">Case Study</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-wrapper">
+
+<div class="hero-text">
+<h2>Agnieszka Bałdyga-Gorzkowski</h2>
+<h3>AI-Enhanced Content & Communication Specialist</h3>
+<p>
+Designing AI-enhanced content systems, structured prompt workflows, and digital learning tools, drawing on expertise in human communication, emotional intelligence, and language education.
+</p>
+<div class="credentials">
+Master’s in Psychology | BA in English Philology (Distinction) | 16+ Years in English & Soft-Skills Training | Teacher Training & Methodology Development | Polish–English Bilingual
+</div>
+</div>
+
+<div class="hero-image">
+<img src="profile.jpg" alt="Agnieszka Bałdyga-Gorzkowski">
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">About Me</h2>
+
+<p>
+I am an education and communication specialist with over 16 years of experience in English language instruction and soft-skills training. Throughout my career, I have focused on designing structured, human-centered learning experiences that combine linguistic precision, psychological insight, and practical application.
+</p>
+
+
+<p>
+For the past three years, I have worked primarily in online environments, which naturally led me to increasingly integrate AI tools into lesson design, content creation, and school operations. This transition sparked my growing interest in structured prompt workflows and AI-enhanced content systems, aligning naturally with my long-standing strengths in analytical thinking, structured argumentation, and attention to detail.
+</p>
+
+
+
+<strong>My academic papers (completed as part of my degree programs):</strong>
+
+<ul style="margin-top:20px; line-height:1.8;">
+<li><em>The Application of the Cognitive Linguistic Approach in Teaching English Idioms Relating to Parts of the Body</em></li>
+<li><em>Role of the Students' Mother Tongue in Teaching a Foreign and a Second Language</em></li>
+<li><em>Poczucie umiejscowienia kontroli zdrowia a style radzenia sobie ze stresem u kobiet w wieku pre-, około- i postmenopauzalnym</em></li>
+</ul>
+
+<br><br>
+
+<h2 class="section-title">What I’m Looking For</h2>
+
+<p>
+I am open to fully remote contracts or freelance projects that allow me to deepen my involvement in AI-driven content development, prompt engineering, and human-centered model interaction.
+</p>
+
+
+<p>
+I am particularly interested in roles such as Prompt Designer, AI Content Specialist, AI Evaluator, or Conversation Designer, with openness to long-term collaboration and potential full-time engagement where there is strong mutual alignment.
+</p>
+
+</section>
+
+<section id="projects" class="light">
+<h2 class="section-title">
+Example Library
+</h2>
+
+<br><br>
+
+<p class="section-note">Section in progress — additional projects will be added.</p>
+
+<p style="margin-top:-30px; margin-bottom:40px; font-size:16px;">
+<strong>AI Tools used in the projects below:</strong> Canva AI, ChatGPT, Suno, 11 Labs, Ideogram
+</p>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>Idioms for Quality Assurance Engineers</h3>
+<p>Interactive fill-in-the-gap and multiple-choice exercise based on an AI-generated song.</p>
+<a href="https://tailoredtalk.my.canva.site/businessidioms" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Christmas-Themed Revision Board Game</h3>
+<p>Interactive, gamified lesson revision activity.</p>
+<a href="https://tailoredtalk.my.canva.site/asiarevisiongame" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Business English – Change in the Organisation</h3>
+<p>Interactive matching and multiple-choice vocabulary exercise based on video material.</p>
+<a href="https://tailoredtalk.my.canva.site/business-english-change-in-organisation" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>AI and Customer Support</h3>
+<p>English vocabulary material based on video content, including explanations in Polish, English, and Spanish, gap-filling exercises, and discussion questions.</p>
+<a href="https://tailoredtalk.my.canva.site/ai-and-customer-support-business-english-vocab" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Sports & Fitness Vocabulary</h3>
+<p>Interactive fill-in-the-gap, matching, and multiple-choice vocabulary exercises based on class material.</p>
+<a href="https://tailoredtalk.my.canva.site/kayo2002" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Final Test</h3>
+<p>Interactive test with score calculator, including multiple-choice, gap-filling, translation, and AI-generated narrative tasks.</p>
+<a href="https://tailoredtalk.my.canva.site/tomasztest" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Teacher Interview Form</h3>
+<p>Interactive form structuring in-house recruitment interviews, with automated result summarization and storage.</p>
+<a href="https://tailoredtalk.my.canva.site/teacherinterview" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Comedy Centre Webpage</h3>
+<p>Webpage promoting a local comedy school, including contact and FAQ sections.</p>
+<a href="https://tailoredtalk.my.canva.site/improvlaspalmas" target="_blank">View Project →</a>
+</div>
+
+<div class="project-card">
+<h3>Extra AI Activities (In Progress)</h3>
+<p>Currently in development.</p>
+</div>
+
+</div>
+</section>
+
+<section id="prompts">
+<h2 class="section-title">Prompt Library</h2>
+
+<br><br>
+
+<p class="section-note">Section in progress</p>
+
+<div class="prompt-category">
+<button class="accordion">Business English Exercises – Beer Company</button>
+<div class="panel">
+<pre>
+[PASTE YOUR FULL PROMPT HERE WITH PLACEHOLDERS]
+</pre>
+<button class="copy-btn">Copy Prompt</button>
+</div>
+</div>
+
+<div class="prompt-category">
+<button class="accordion">General English Exercise</button>
+<div class="panel">
+<pre>
+[PASTE YOUR FULL PROMPT HERE WITH PLACEHOLDERS]
+</pre>
+<button class="copy-btn">Copy Prompt</button>
+</div>
+</div>
+
+<div class="prompt-category">
+<button class="accordion">Teenage Exercise Page</button>
+<div class="panel">
+<pre>
+[PASTE YOUR FULL PROMPT HERE WITH PLACEHOLDERS]
+</pre>
+<button class="copy-btn">Copy Prompt</button>
+</div>
+</div>
+
+</section>
+
+<section id="case" class="light">
+<h2 class="section-title">Case Study</h2>
+
+<br><br>
+
+<p class="section-note">Section in progress</p>
+
+<div class="case-container">
+
+<h3 class="case-subtitle">Designing a Structured AI Prompt Workflow for Lesson Content</h3>
+
+<p>
+This case study presents the development of a structured prompt workflow designed to generate high-quality, level-appropriate English language exercises while maintaining pedagogical precision and clarity.
+</p>
+
+<h3 class="case-subtitle">Initial Challenge</h3>
+<p>
+Early AI-generated exercises lacked consistency in difficulty level, task structure, and instructional clarity. Outputs required heavy manual correction and did not always align with specific learning objectives.
+</p>
+
+<h3 class="case-subtitle">Prompt Development Process</h3>
+<p>
+I designed a multi-layered prompt structure that clearly defined learner level, linguistic objective, exercise type, output formatting, and pedagogical constraints. Iterative testing and refinement were conducted to improve consistency and reduce ambiguity.
+</p>
+
+<h3 class="case-subtitle">Refinement & Optimization</h3>
+<p>
+Through repeated adjustments—clarifying constraints, specifying output formatting, and adding error-prevention instructions—the prompt evolved into a stable system capable of producing structured, classroom-ready material with minimal revision.
+</p>
+
+<h3 class="case-subtitle">Outcome</h3>
+<p>
+The final prompt workflow significantly reduced editing time, improved structural coherence of exercises, and ensured alignment with pedagogical goals. The system now functions as a reusable internal framework for AI-assisted content production.
+</p>
+
+<h3 class="case-subtitle">Key Takeaways</h3>
+<ul class="case-list">
+<li>Precise constraint-setting improves output reliability.</li>
+<li>Explicit formatting instructions reduce post-generation editing.</li>
+<li>Iterative refinement is essential in professional prompt design.</li>
+</ul>
+
+</div>
+</section>
+
+
+<footer>
+<p>
+<a href="#">LinkedIn</a> |
+<a href="mailto:your@email.com">Email</a>
+</p>
+<p>© 2026 Agnieszka Bałdyga-Gorzkowski. All rights reserved.</p>
+</footer>
+
+<script>
+document.querySelectorAll(".accordion").forEach(button=>{
+button.addEventListener("click",()=>{
+const panel=button.nextElementSibling;
+panel.style.display = panel.style.display === "block" ? "none" : "block";
+});
+});
+
+document.querySelectorAll(".copy-btn").forEach(button=>{
+button.addEventListener("click",()=>{
+const text = button.previousElementSibling.innerText;
+navigator.clipboard.writeText(text);
+button.innerText = "Copied!";
+setTimeout(()=>button.innerText="Copy Prompt",2000);
+});
+});
+</script>
+
+</body>
+</html>
