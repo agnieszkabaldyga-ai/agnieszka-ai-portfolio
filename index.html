@@ -305,6 +305,34 @@ margin-bottom:40px;
 font-style:italic;
 }
 
+/* PROMPT LIBRARY UPGRADED STRUCTURE */
+
+.prompt-block{
+margin-bottom:70px;
+max-width:900px;
+}
+
+.prompt-title{
+font-size:22px;
+margin-bottom:15px;
+font-weight:600;
+}
+
+.prompt-meta{
+margin-bottom:15px;
+line-height:1.7;
+}
+
+.prompt-list{
+margin-bottom:20px;
+padding-left:20px;
+line-height:1.7;
+}
+
+.prompt-list li{
+margin-bottom:6px;
+}
+
 /* FOOTER */
 
 footer{
@@ -381,6 +409,28 @@ animation:spin 25s linear infinite;
 
 }
 
+
+/* Research section smaller accordion button */
+
+.research-btn {
+  width: auto;
+  display: inline-block;
+  padding: 4px 10px;
+  margin-top: 6px;
+  font-size: 0.85em;
+  font-weight: 400;
+  color: #777;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.research-btn:hover {
+  background-color: #f5f5f5;
+  color: #444;
+}
+
+
 </style>
 </head>
 
@@ -423,25 +473,54 @@ Master’s in Psychology | BA in English Philology (Distinction) | 16+ Years in 
 <h2 class="section-title">About Me</h2>
 
 <p>
-I am an education and communication specialist with over 16 years of experience in English language instruction and soft-skills training. Throughout my career, I have focused on designing structured, human-centered learning experiences that combine linguistic precision, psychological insight, and practical application.
+I am an education and communication specialist with vast experience in English language instruction and soft-skills training. I focuse on designing structured, human-centered learning experiences that combine linguistic precision and psychological insight.
 </p>
 
 
 <p>
-For the past three years, I have worked primarily in online environments, which naturally led me to increasingly integrate AI tools into lesson design, content creation, and school operations. This transition sparked my growing interest in structured prompt workflows and AI-enhanced content systems, aligning naturally with my long-standing strengths in analytical thinking, structured argumentation, and attention to detail.
+For the past three years, I have worked primarily in online environments, which naturally led me to integrate AI tools into content creation and school operations. This transition sparked my growing interest in structured prompt workflows and AI-enhanced content systems, aligning naturally with my long-standing strengths in analytical thinking, structured argumentation, and attention to detail.
 </p>
 
 
 
-<strong>My academic papers (completed as part of my degree programs):</strong>
+<strong>My academic research explored:</strong>
 
 <ul style="margin-top:20px; line-height:1.8;">
-<li><em>The Application of the Cognitive Linguistic Approach in Teaching English Idioms Relating to Parts of the Body</em></li>
-<li><em>Role of the Students' Mother Tongue in Teaching a Foreign and a Second Language</em></li>
-<li><em>Poczucie umiejscowienia kontroli zdrowia a style radzenia sobie ze stresem u kobiet w wieku pre-, około- i postmenopauzalnym</em></li>
-</ul>
 
-<br><br>
+  <li>
+    <em>Cognitive mechanisms in language learning</em><br>
+    <button class="accordion research-btn">View details</button>
+    <div class="panel">
+      <p>
+        <strong>The Application of the Cognitive Linguistic Approach in Teaching English Idioms Relating to Parts of the Body</strong><br>
+        (BA thesis, written in English)
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <em>Cross-linguistic influence in language acquisition</em><br>
+    <button class="accordion research-btn">View details</button>
+    <div class="panel">
+      <p>
+        <strong>Role of the Students' Mother Tongue in Teaching a Foreign and a Second Language</strong><br>
+        (Academic paper, written in English)
+      </p>
+    </div>
+  </li>
+
+  <li>
+    <em>Psychological factors in stress regulation and perceived health control</em><br>
+    <button class="accordion research-btn">View details</button>
+    <div class="panel">
+      <p>
+        <strong>Poczucie umiejscowienia kontroli zdrowia a style radzenia sobie ze stresem u kobiet w wieku pre-, około- i postmenopauzalnym</strong><br>
+        (Master’s thesis, written in Polish)
+      </p>
+    </div>
+  </li>
+
+</ul><br><br>
 
 <h2 class="section-title">What I’m Looking For</h2>
 
@@ -451,7 +530,7 @@ I am open to fully remote contracts or freelance projects that allow me to deepe
 
 
 <p>
-I am particularly interested in roles such as Prompt Designer, AI Content Specialist, AI Evaluator, or Conversation Designer, with openness to long-term collaboration and potential full-time engagement where there is strong mutual alignment.
+I am particularly interested in roles such as Prompt Designer, AI Content Specialist, AI Evaluator, or Conversation Designer, with openness to long-term collaboration where there is strong mutual alignment.
 </p>
 
 </section>
@@ -532,40 +611,153 @@ Example Library
 
 <br><br>
 
-<p class="section-note">Section in progress</p>
+<p class="section-note">Section in progress — new prompt workflows will be added</p>
 
-<div class="prompt-category">
-<button class="accordion">Business English Exercises – Beer Company</button>
+<!-- PROMPT 1 -->
+
+<div class="prompt-block">
+
+<h3 class="prompt-title">
+English Class Revision Generator 
+</h3>
+
+<p class="prompt-meta"><strong>Problem it solves:</strong><br>
+Manual post-lesson revision design is time-intensive, difficult to standardise, and inconsistent across instructors. This prompt systematises and automates personalised revision page generation while maintaining pedagogical control and brand consistency.
+</p>
+
+<p class="prompt-meta"><strong>Use case:</strong><br>
+Internal AI workflow implemented via Canva AI. Used after each lesson to generate individual, student-specific revision pages aligned strictly with lesson notes. Designed for multi-teacher deployment within the school.</p>
+
+<p class="prompt-meta"><strong>Prompt architecture (constraint-based design & output control):</strong></p>
+<ul class="prompt-list">
+  <li>Output constrained to a responsive 1-page website (cross-device compatible)</li>
+  <li>Fixed brand elements (visual identity, school details, layout structure)</li>
+  <li>Variable placeholders (student name, lesson content) enabling controlled personalisation</li>
+  <li>Hard lexical constraint: vocabulary sourced exclusively from lesson notes</li>
+  <li>Difficulty level controlled implicitly via strict alignment with class notes</li>
+  <li>Structured exercise framework (gap-fill, matching, multiple choice)</li>
+  <li>Embedded output validation and scoring logic with cumulative percentage calculation</li>
+  <li>Reusable prompt architecture supporting multi-teacher deployment</li>
+  <li>Prompt standardisation ensuring consistent pedagogical outputs across instructors</li>
+  <li>Workflow optimisation reducing revision preparation time</li>
+  <li>Human-in-the-loop verification before publication to ensure quality control</li>
+</ul>
+<button class="accordion">View Full Prompt</button>
 <div class="panel">
 <pre>
-[PASTE YOUR FULL PROMPT HERE WITH PLACEHOLDERS]
+Code a 1-page website with exercises for my student of English. It should work on computers, mobiles and tablets.
+It should have  the name of my school with this emoji of a thread and a needle: 🪡Tailored Talk at the top.
+
+The title of the website will be : ....... - revision from ...
+
+It should be in my brand colours: navy dark blue, light powder pink and white. 
+It should have some lively emojis connected wth studying, English and emojis referring to some words from the lesson if possible.  It can have some motivating comments like "Well done!" etc. 
+At the bottom of the website there should be my e-mail: kontakt@tailoredtalk.eu and the website address of my school: www.tailiredtalk.eu 
+
+
+Make 3 exercises
+1. Fill in the gaps. There is a box with words from the lesson and below sentences in English with gaps. There should be more words than gaps - some words will not be used in any sentence. The student needs to write the words from the box into the sentences. The words in the box must have vocabulary only from the lesson notes, do not invent any words. 
+Matching. Match words (1-5) with definitions (A-E). The student should write the correct letter next to the correct number (no dragging).
+Multiple choice. The student needs to click on the right answer from a, b, and c.
+
+After completing each exercise, student can click on “Check my score” button. Then the good answers become green and the wrong answers become red and there is a final mark visible. Every good answer is worth 1 point. At the end, add a final score summary section that calculates and displays the total points and percentage across all three exercises.
+
+The exercises should test if the student remembers ALL the material from the last class. The notes from the lesson are here: ....
 </pre>
 <button class="copy-btn">Copy Prompt</button>
 </div>
+
 </div>
 
-<div class="prompt-category">
-<button class="accordion">General English Exercise</button>
+
+<!-- PROMPT 2 -->
+
+<div class="prompt-block">
+
+<h3 class="prompt-title">
+Group Revision/Test Platform Generator
+</h3>
+
+<p class="prompt-meta"><strong>Problem it solves:</strong></p>
+<p>
+Group revision requires individual accountability, structured result tracking, and teacher-level oversight. 
+Manual preparation of interactive revision pages and tests for multiple students is time-intensive and difficult to standardise. 
+This prompt extends the individual revision workflow to support controlled multi-student interaction and evaluation.
+</p>
+
+<p class="prompt-meta"><strong>Use case:</strong></p>
+<p>
+Internal AI workflow implemented via Canva AI. Used to generate interactive revision pages and tests for group classes, 
+expanding the individual system into a structured multi-user environment.
+</p>
+
+<p class="prompt-meta"><strong>Prompt architecture (constraint-based design &amp; output control):</strong></p>
+<ul class="prompt-list">
+  <li>Builds on all constraint mechanisms from Prompt 1 with extended multi-user logic</li>
+  <li>Multi-user handling with predefined student identifiers</li>
+  <li>Role-separated output structure (Student View / Teacher View)</li>
+  <li>Individual result tracking per student</li>
+  <li>Detailed answer breakdown visible in Teacher View</li>
+  <li>State control mechanism: answers locked after submission</li>
+  <li>Controlled visibility of results (students see only their own outcomes; teacher sees full class data)</li>
+</ul>
+
+<button class="accordion">View Full Prompt</button>
 <div class="panel">
 <pre>
-[PASTE YOUR FULL PROMPT HERE WITH PLACEHOLDERS]
+Code a 1-page website with exercises for my ..(NUMBER).. students of English. It should work on computers, mobiles and tablets. Each student, ..(STUDENTS' NAMES).. , should be able to do these tasks on their own and the Teacher should be able to see the students' results (with a detailed list of their correct and wrong answers) in a separate Teacher View. 
+
+The website should have the name of my school with this emoji of a thread and a needle: 🪡Tailored Talk at the top. The title of the website will be : ....... - revision from ... It should be in my brand colours: navy dark blue, light powder pink and white. It should have some lively emojis connected wth studying, English and emojis referring to some words from the lesson if possible. It can have some motivating comments like "Well done!" etc. At the bottom of the website there should be my e-mail: kontakt@tailoredtalk.eu and the website address of my school: www.tailiredtalk.eu 
+
+Make 3 exercises: 
+
+ Fill in the gaps. There is a box with words from the lesson and below sentences in English with gaps. There should be more words than gaps - some words will not be used in any sentence. The student needs to write the words from the box into the sentences. 
+Matching. Match words (1-5) with definitions (A-E). The student should write the correct letter next to the correct number (no dragging).
+Multiple choice. The student needs to click on the right answer from a, b, and c. 
+
+After completing each exercise, student can click on “Check my score” button. Then the good answers become green and the wrong answers become red and there is a final mark visible. Every good answer is worth 1 point. At the end, add a final score summary section that calculates and displays the total points and percentage across all three exercises. After checking the score it should not be possible to change the originally chosen answers. 
+
+The exercises should test if the students remember ALL the material from the last class. The notes from the lesson are here: ....</pre>
+<button class="copy-btn">Copy Prompt</button>
+</div>
+
+</div>
+
+
+<!-- PROMPT 3 -->
+
+<div class="prompt-block">
+
+<h3 class="prompt-title">
+Teenage Learning Activity Generator – Engagement-Oriented
+</h3>
+
+<p class="prompt-meta"><strong>Problem it solves:</strong><br>
+[Describe engagement challenge or learning objective.]
+</p>
+
+<p class="prompt-meta"><strong>Use case:</strong><br>
+[Context: classroom, online lesson, revision session, etc.]
+</p>
+
+<p class="prompt-meta"><strong>Design logic:</strong></p>
+<ul class="prompt-list">
+<li>[Constraint 1]</li>
+<li>[Constraint 2]</li>
+<li>[Constraint 3]</li>
+</ul>
+
+<button class="accordion">View Full Prompt</button>
+<div class="panel">
+<pre>
+[PASTE FULL PROMPT WITH PLACEHOLDERS HERE]
 </pre>
 <button class="copy-btn">Copy Prompt</button>
 </div>
-</div>
 
-<div class="prompt-category">
-<button class="accordion">Teenage Exercise Page</button>
-<div class="panel">
-<pre>
-[PASTE YOUR FULL PROMPT HERE WITH PLACEHOLDERS]
-</pre>
-<button class="copy-btn">Copy Prompt</button>
-</div>
 </div>
 
 </section>
-
 <section id="case" class="light">
 <h2 class="section-title">Case Study</h2>
 
@@ -573,40 +765,6 @@ Example Library
 
 <p class="section-note">Section in progress</p>
 
-<div class="case-container">
-
-<h3 class="case-subtitle">Designing a Structured AI Prompt Workflow for Lesson Content</h3>
-
-<p>
-This case study presents the development of a structured prompt workflow designed to generate high-quality, level-appropriate English language exercises while maintaining pedagogical precision and clarity.
-</p>
-
-<h3 class="case-subtitle">Initial Challenge</h3>
-<p>
-Early AI-generated exercises lacked consistency in difficulty level, task structure, and instructional clarity. Outputs required heavy manual correction and did not always align with specific learning objectives.
-</p>
-
-<h3 class="case-subtitle">Prompt Development Process</h3>
-<p>
-I designed a multi-layered prompt structure that clearly defined learner level, linguistic objective, exercise type, output formatting, and pedagogical constraints. Iterative testing and refinement were conducted to improve consistency and reduce ambiguity.
-</p>
-
-<h3 class="case-subtitle">Refinement & Optimization</h3>
-<p>
-Through repeated adjustments—clarifying constraints, specifying output formatting, and adding error-prevention instructions—the prompt evolved into a stable system capable of producing structured, classroom-ready material with minimal revision.
-</p>
-
-<h3 class="case-subtitle">Outcome</h3>
-<p>
-The final prompt workflow significantly reduced editing time, improved structural coherence of exercises, and ensured alignment with pedagogical goals. The system now functions as a reusable internal framework for AI-assisted content production.
-</p>
-
-<h3 class="case-subtitle">Key Takeaways</h3>
-<ul class="case-list">
-<li>Precise constraint-setting improves output reliability.</li>
-<li>Explicit formatting instructions reduce post-generation editing.</li>
-<li>Iterative refinement is essential in professional prompt design.</li>
-</ul>
 
 </div>
 </section>
