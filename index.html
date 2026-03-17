@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -224,16 +225,17 @@ margin-bottom:25px;
 }
 
 .accordion{
-width:100%;
-background:var(--navy);
-color:var(--white);
-padding:20px;
-border:none;
-text-align:left;
-font-size:18px;
-cursor:pointer;
-border-radius:12px;
-transition:all 0.3s ease;
+  width:auto;
+  display:inline-block;
+  padding:4px 10px;
+  margin-top:6px;
+  font-size:0.85em;
+  font-weight:400;
+  color:var(--accent);
+  background-color:transparent;
+  border:1px solid #ccc;
+  border-radius:4px;
+  cursor:pointer;
 }
 
 .accordion:hover{
@@ -309,7 +311,182 @@ font-style:italic;
 
 .prompt-block{
 margin-bottom:70px;
-max-width:900px;
+max-width:100%;
+}
+
+.prompt-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:30px;
+align-items:start;
+width:100%;
+}
+
+.prompt-images-small{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.prompt-images-small img{
+width:75%;
+margin-left:25%;
+}
+
+.prompt-image-tall img{
+width:90%;
+}
+
+.prompt2-images{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:90px;
+}
+
+.prompt2-images img{
+width:90%;
+}
+
+.prompt2-image-tall{
+margin-top:90px;
+}
+
+.prompt2-image-tall img{
+width:75%;
+margin-left:25%;
+}
+
+.screenshot{
+border:1px solid rgba(59,130,246,0.15);
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+max-width:100%;
+height:auto;
+display:block;
+cursor: zoom-in;
+}
+
+.case-content h3{
+margin-top:50px;
+margin-bottom:15px;
+}
+
+#case h3{
+margin-bottom:20px;
+}
+
+.case-content h4{
+margin-top:25px;
+margin-bottom:8px;
+}
+
+.case-content p{
+margin-bottom:14px;
+line-height:1.7;
+}
+
+ul,
+ol{
+margin-top:14px;
+margin-bottom:26px;
+padding-left:20px;
+line-height:1.9;
+}
+
+li{
+margin-bottom:14px;
+line-height:1.9;
+}
+
+.case-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
+margin-bottom:40px;
+}
+
+.case-item img{
+width:100%;
+}
+
+.case-label{
+font-size:16px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+
+.case-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+font-size:14px;
+table-layout:fixed;
+}
+
+.case-table th:nth-child(1),
+.case-table td:nth-child(1){
+width:55%;
+}
+
+.case-table th:nth-child(2),
+.case-table td:nth-child(2),
+.case-table th:nth-child(3),
+.case-table td:nth-child(3),
+.case-table th:nth-child(4),
+.case-table td:nth-child(4){
+width:15%;
+text-align:center;
+}
+.case-table th,
+.case-table td{
+border:1px solid #e2e8f0;
+padding:10px;
+text-align:left;
+}
+
+.case-table th{
+background:#1e293b;
+color:white;
+font-weight:600;
+}
+
+.final-score-table{
+max-width:500px;
+margin:40px 0;
+border-collapse:collapse;
+background:#f8fafc;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+border-radius:12px;
+overflow:hidden;
+}
+
+.final-score-table th,
+.final-score-table td{
+padding:14px 18px;
+border-bottom:1px solid #e2e8f0;
+text-align:left;
+}
+
+.final-score-table th{
+background:#1e293b;
+color:white;
+font-weight:600;
+}
+
+
+.prompt-text{
+max-width:100%;
+}
+
+@media(max-width:900px){
+
+.prompt-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 .prompt-title{
@@ -419,17 +596,17 @@ animation:spin 25s linear infinite;
   margin-top: 6px;
   font-size: 0.85em;
   font-weight: 400;
-  color: #777;
+  color: var(--accent);
   background-color: transparent;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .research-btn:hover {
-  background-color: #f5f5f5;
-  color: #444;
+  background: #111827;
+  color: var(--accent);
+  box-shadow: 0 0 20px rgba(59,130,246,0.3);
 }
-
 
 </style>
 </head>
@@ -473,7 +650,7 @@ Master’s in Psychology | BA in English Philology (Distinction) | 16+ Years in 
 <h2 class="section-title">About Me</h2>
 
 <p>
-I am an education and communication specialist with vast experience in English language instruction and soft-skills training. I focuse on designing structured, human-centered learning experiences that combine linguistic precision and psychological insight.
+I am an education and communication specialist with vast experience in English language instruction and soft-skills training. I focus on designing structured, human-centered learning experiences that combine linguistic precision and psychological insight.
 </p>
 
 
@@ -615,10 +792,12 @@ Example Library
 
 <!-- PROMPT 1 -->
 
-<div class="prompt-block">
+<div class="prompt-block prompt-grid">
+
+<div class="prompt-text">
 
 <h3 class="prompt-title">
-English Class Revision Generator 
+English Class Revision Generator
 </h3>
 
 <p class="prompt-meta"><strong>Problem it solves:</strong><br>
@@ -667,12 +846,31 @@ The exercises should test if the student remembers ALL the material from the las
 <button class="copy-btn">Copy Prompt</button>
 </div>
 
+
+</div>
+
+<div class="prompt-images-small">
+
+<img src="prompt1_img1.png" class="screenshot">
+<img src="prompt1_img2.png" class="screenshot">
+<img src="prompt1_img3.png" class="screenshot">
+
+</div>
+
+<div class="prompt-image-tall">
+
+<img src="prompt1_tall.png" class="screenshot">
+
+</div>
+
 </div>
 
 
 <!-- PROMPT 2 -->
 
-<div class="prompt-block">
+<div class="prompt-block prompt-grid">
+
+<div class="prompt-text">
 
 <h3 class="prompt-title">
 Group Revision/Test Platform Generator
@@ -723,37 +921,18 @@ The exercises should test if the students remember ALL the material from the las
 
 </div>
 
+<div class="prompt2-image-tall">
 
-<!-- PROMPT 3 -->
+<img src="prompt2_tall.png" class="screenshot">
 
-<div class="prompt-block">
-
-<h3 class="prompt-title">
-Teenage Learning Activity Generator – Engagement-Oriented
-</h3>
-
-<p class="prompt-meta"><strong>Problem it solves:</strong><br>
-[Describe engagement challenge or learning objective.]
-</p>
-
-<p class="prompt-meta"><strong>Use case:</strong><br>
-[Context: classroom, online lesson, revision session, etc.]
-</p>
-
-<p class="prompt-meta"><strong>Design logic:</strong></p>
-<ul class="prompt-list">
-<li>[Constraint 1]</li>
-<li>[Constraint 2]</li>
-<li>[Constraint 3]</li>
-</ul>
-
-<button class="accordion">View Full Prompt</button>
-<div class="panel">
-<pre>
-[PASTE FULL PROMPT WITH PLACEHOLDERS HERE]
-</pre>
-<button class="copy-btn">Copy Prompt</button>
 </div>
+
+<div class="prompt2-images">
+
+<img src="prompt2_img1.png" class="screenshot">
+<img src="prompt2_img2.png" class="screenshot">
+</div>
+
 
 </div>
 
@@ -763,8 +942,499 @@ Teenage Learning Activity Generator – Engagement-Oriented
 
 <br><br>
 
-<p class="section-note">Section in progress</p>
+<div class="case-content">
 
+<h3>Case Study Summary</h3>
+
+<p>
+This project evaluates how three large language models — ChatGPT, Gemini, and Copilot — perform when executing a highly constrained creative-writing prompt combined with a structured language exercise task.
+</p>
+
+<p>
+The experiment includes one prompt refinement which emerged during testing after observing weaknesses in the initial output.
+</p>
+
+<p>
+The results reveal differences in constraint compliance, formatting reliability, and task execution across models.
+</p>
+
+
+<h3>Objective</h3>
+
+<p>
+To evaluate how three LLM systems, ChatGPT, Gemini and Copilot, perform when executing a highly constrained creative-writing and language exercise design prompt.
+</p>
+
+
+<h3>Evaluation Focus</h3>
+
+<p>
+Based on extensive personal experience using AI to generate multiple-choice exercises, and repeated manual refinement of narrative outputs for student use, this case study examines whether current models (2026) can reliably embed a language exercise within a coherent narrative, or whether expert human input remains necessary to ensure quality. Model performance was examined across the three output dimensions listed below.
+</p>
+
+<h4>Output Format</h4>
+<p>
+Which model demonstrates the strongest compliance under stacked instructional constraints with respect to output format?
+</p>
+
+<h4>Narrative Quality</h4>
+<p>
+Are the models able to maintain narrative logic, grammatical correctness, and humour under lexical restrictions?
+</p>
+
+<h4>Language Exercise Design Accuracy</h4>
+
+<p>
+Are the models able to design a logically embedded multiple-choice task within the narrative that adheres to specified methodological requirements?
+</p>
+
+<p>
+<strong>Extra remark:</strong> Testing whether AI could embed a language exercise inside a coherent narrative appeared particularly interesting.
+</p>
+
+
+<h3>Prompt Design: Constraint Stacking Framework</h3>
+
+<ul>
+<li>Linguistic constraints: CEFR A2, Past Simple only.</li>
+<li>Structural constraints: introduction–development–ending structure, sentence limit.</li>
+<li>Lexical constraints: predefined vocabulary and linking words pool.</li>
+<li>Formatting constraints: gap-fill exercise with options, 100% pool vocabulary coverage in answer options, explicit template for gaps and correct-answer annotation.</li>
+<li>Creative constraint: humorous story, for a specific age, fixed characters, single-topic narrative, logical event progression.</li>
+</ul>
+
+
+<h3>Prompt 1</h3>
+
+<p>Prompt 1 was first tested with ChatGPT.</p>
+
+<button class="accordion">View Prompt 1</button>
+<div class="panel">
+<pre>
+Write a logical and simple story in English at A2 level. 
+The story must contain 10–20 sentences in total and use only the Past Simple tense. 
+Sentences must be short and uncomplicated. 
+The story must have one clear main plot and a visible three-part structure: Paragraph 1 – Introduction Paragraph 2 – Development Paragraph 3 – Ending. 
+
+Events in the story must be logically connected. You may use only the following connectors: and, but, or, so, after that, when, that’s why, because. Do not use any other connectors. 
+
+The story should be humorous and suitable for an English learner aged 30–45. The story must be about a woman named Malwina (the main character) who has two children: a teenage daughter and a 9-year-old son. 
+
+Include fill-in-the-blank sentences with three answer options. Only one option must correctly complete the sentence, and the other two options must be either illogical or grammatically incorrect. 
+Format sentences with gaps exactly like this example: “The police caught him and he went to ______. OPTIONS: a) jail b) jails c) flour (correct: a)” 
+
+Important constraints: 
+•	I will provide a list of words at the end of my message.
+•	The answer options a), b), and c) must be created only using words from this list. 
+•	Do not invent any new words for the options. 
+•	Every word from the provided list must appear at least once among the answer options (a, b, or c). 
+•	The correctly completed story must contain at least 75% of the words from the provided list. 
+•	The entire text must be written only in English. 
+•	Do not include Polish translations. 
+•	Return the response as three paragraphs (Introduction, Development, Ending) with 10–20 sentences in total. 
+
+VOCABULARY LIST: 
+1.	difficult - trudny 
+2.	easy - łatwy 
+3.	confirm - potwierdzić 
+4.	cancel - odwołać 
+5.	postpone - przesunąć (na później) 
+6.	order - zamówienie 
+7.	complaint - skarga 
+8.	delivery - dostawa to arrange - załatwić, zorganizować 
+9.	an arrangemet - ustalenie 
+10.	write – pisać
+11.	read - czytać 
+12.	this - to 
+13.	that - tamto 
+14.	these - te 
+15.	those - tamte
+
+</pre>
+</div>
+
+<button class="accordion">View Refinement</button>
+<div class="panel">
+<pre>
+Shuffle the a b c options in your story and make sure that sometimes a) is correct, sometimes b) and sometimes c). Do not change anything else.
+</pre>
+</div>
+
+<div class="case-grid">
+
+<div class="case-item">
+<div class="case-label">ChatGPT Outputs</div>
+<img src="case 1 chatgpt output 1 and 2.png" class="screenshot">
+</div>
+
+<div class="case-item">
+<div class="case-label">ChatGPT Output Analysis</div>
+<img src="case 2 chat gpt.png" class="screenshot">
+</div>
+
+</div>
+
+
+<h3>Prompt 2</h3>
+
+<p>Prompt 2 was tested with Gemini and Colpilot and included additional constraints after analysing the first output.</p>
+
+<button class="accordion">View Prompt 2</button>
+<div class="panel">
+<pre>
+Write a logical and simple story in English at A2 level. 
+The story must contain 10–20 sentences in total and use only the Past Simple tense. 
+Sentences must be short and uncomplicated. 
+The story must have one clear main plot and a visible three-part structure: Paragraph 1 – Introduction Paragraph 2 – Development Paragraph 3 – Ending. 
+
+Events in the story must be logically connected. You may use only the following connectors: and, but, or, so, after that, when, that’s why, because. Do not use any other connectors. 
+
+The story should be humorous and suitable for an English learner aged 30–45. The story must be about a woman named Malwina (the main character) who has two children: a teenage daughter and a 9-year-old son. 
+
+Include fill-in-the-blank sentences with three answer options. Only one option must correctly complete the sentence, and the other two options must be either illogical or grammatically incorrect. 
+Format sentences with gaps exactly like this example: “The police caught him and he went to ______. OPTIONS: a) jail b) jails c) flour (correct: a)” Make sure that sometimes a) is correct, sometimes b) and sometimes c).
+
+Important constraints: 
+•	I will provide a list of words at the end of my message.
+•	The answer options a), b), and c) must be created only using words from this list. 
+•	Do not invent any new words for the options. 
+•	Every word from the provided list must appear at least once among the answer options (a, b, or c). 
+•	The correctly completed story must contain at least 75% of the words from the provided list. 
+•	The entire text must be written only in English. 
+•	Do not include Polish translations. 
+•	Return the response as three paragraphs (Introduction, Development, Ending) with 10–20 sentences in total. 
+
+VOCABULARY LIST: 
+1.	difficult - trudny 
+2.	easy - łatwy 
+3.	confirm - potwierdzić 
+4.	cancel - odwołać 
+5.	postpone - przesunąć (na później) 
+6.	order - zamówienie 
+7.	complaint - skarga 
+8.	delivery - dostawa to arrange - załatwić, zorganizować 
+9.	an arrangemet - ustalenie 
+10.	write – pisać
+11.	read - czytać 
+12.	this - to 
+13.	that - tamto 
+14.	these - te 
+15.	those - tamte
+
+</pre>
+</div>
+
+<div class="case-grid">
+
+<div class="case-item">
+<div class="case-label">Gemini Output Analysis</div>
+<img src="case 3 gemini.png" class="screenshot">
+</div>
+
+<div class="case-item">
+<div class="case-label">Copilot Output Analysis</div>
+<img src="case 4 copilot.png" class="screenshot">
+</div>
+
+</div>
+
+
+<h3>Scoring Rubric</h3>
+
+<p>The following rubrics were used to evaluate model outputs.</p>
+
+<button class="accordion">Output Mechanics and Formatting</button>
+
+<div class="panel">
+
+<table class="case-table">
+
+<tr>
+<th>Evaluation Criterion</th>
+<th>2 Points</th>
+<th>1 Point</th>
+<th>0 Points</th>
+</tr>
+
+<tr>
+<td>3 visually separate paragraphs</td>
+<td>Full compliance</td>
+<td>1 element missing or too many</td>
+<td>More than 1 element missing or too many</td>
+</tr>
+
+<tr>
+<td>Language adherence</td>
+<td>English only</td>
+<td>1 sentence or 1–5 words in another language</td>
+<td>More than 1 sentence or more than 5 words in another language</td>
+</tr>
+
+<tr>
+<td>Length compliance</td>
+<td>10–20 sentences</td>
+<td>1 sentence too long or too short</td>
+<td>More than 1 sentence outside the limit</td>
+</tr>
+
+<tr>
+<td>Vocabulary restriction compliance</td>
+<td>≥75% of required vocabulary used</td>
+<td>55–74% of required vocabulary used</td>
+<td>&lt;55% of required vocabulary used</td>
+</tr>
+
+<tr>
+<td>Gap-fill structure in the sentence</td>
+<td>Full compliance</td>
+<td>1 mistake or 1 task too few / 1 missing task</td>
+<td>More than 1 mistake or more than 1 missing task</td>
+</tr>
+
+<tr>
+<td>Accurate presentation of OPTIONS: a) b) c)</td>
+<td>Full compliance</td>
+<td>1 mistake or 1 task too few / 1 missing task</td>
+<td>More than 1 mistake or more than 1 missing task</td>
+</tr>
+
+<tr>
+<td>Accurate presentation of the correct answer “(correct: a)”</td>
+<td>Full compliance</td>
+<td>1 mistake or 1 task too few / 1 missing task</td>
+<td>More than 1 mistake or more than 1 missing task</td>
+</tr>
+
+</table>
+
+</div>
+
+<button class="accordion">Narrative Quality – Content and Logic</button>
+
+<div class="panel">
+
+<table class="case-table">
+
+<tr>
+<th>Evaluation Criterion</th>
+<th>2 Points</th>
+<th>1 Point</th>
+<th>0 Points</th>
+</tr>
+
+<tr>
+<td>Logical sequence of events</td>
+<td>Clear and logical</td>
+<td>Minor inconsistencies</td>
+<td>Illogical or confusing</td>
+</tr>
+
+<tr>
+<td>Character clarity</td>
+<td>Clear character roles</td>
+<td>Some ambiguity</td>
+<td>Unclear characters</td>
+</tr>
+
+<tr>
+<td>Narrative humour</td>
+<td>Humorous narrative achieved</td>
+<td>Partially humorous</td>
+<td>No humour</td>
+</tr>
+
+</table>
+
+</div>
+
+<button class="accordion">Language Exercise Content Accuracy and Usability</button>
+
+<div class="panel">
+
+<table class="case-table">
+
+<tr>
+<th>Evaluation Criterion</th>
+<th>2 Points</th>
+<th>1 Point</th>
+<th>0 Points</th>
+</tr>
+
+<tr>
+<td>Exercise integrated into story</td>
+<td>Fully integrated</td>
+<td>Partially integrated</td>
+<td>Not integrated</td>
+</tr>
+
+<tr>
+<td>Correct answer validity</td>
+<td>Correct and unique</td>
+<td>Minor issue</td>
+<td>Incorrect</td>
+</tr>
+
+<tr>
+<td>Distractor quality</td>
+<td>Plausible distractors</td>
+<td>Weak distractors</td>
+<td>Invalid distractors</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Model Evaluation Results</h3>
+
+<p>Results were analysed across three categories and summarised in a final score table.</p>
+
+
+
+<table class="case-table">
+
+<tr>
+<th>A. OUTPUT MECHANICS AND FORMATTING</th>
+<th>ChatGPT</th>
+<th>Gemini</th>
+<th>Copilot</th>
+</tr>
+
+<tr><td>A1. 3 visually separate paragraphs</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>A2. Language adherence</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>A3. Length compliance</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>A4. Vocabulary restriction compliance</td><td>2</td><td>1</td><td>2</td></tr>
+<tr><td>A5. Gap-fill structure in the sentence</td><td>2</td><td>0</td><td>0</td></tr>
+<tr><td>A6. OPTIONS formatting (a, b, c)</td><td>2</td><td>0</td><td>0</td></tr>
+<tr><td>A7. Correct-answer annotation</td><td>2</td><td>0</td><td>0</td></tr>
+
+<tr>
+<td><strong>Section A Total</strong></td>
+<td><strong>14</strong></td>
+<td><strong>7</strong></td>
+<td><strong>8</strong></td>
+</tr>
+
+</table></p>
+</div>
+
+
+<table class="case-table">
+
+<tr>
+<th>B. NARRATIVE QUALITY</th>
+<th>ChatGPT</th>
+<th>Gemini</th>
+<th>Copilot</th>
+</tr>
+
+<tr><td>B1. Narrative consistency</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>B2. Main and side characters</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>B3. Introduction–development–ending</td><td>2</td><td>2</td><td>1</td></tr>
+<tr><td>B4. Single-topic narrative</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>B5. Logical event progression</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>B6. Cause–effect clarity</td><td>2</td><td>1</td><td>0</td></tr>
+<tr><td>B7. Required conjunctions</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>B8. Correct language use</td><td>2</td><td>1</td><td>2</td></tr>
+<tr><td>B9. Natural phrasing at A2 level</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>B10. Humour</td><td>1</td><td>0</td><td>0</td></tr>
+
+<tr>
+<td><strong>Section B Total</strong></td>
+<td><strong>19</strong></td>
+<td><strong>16</strong></td>
+<td><strong>13</strong></td>
+</tr>
+
+</table></p>
+</div>
+
+<table class="case-table">
+
+<tr>
+<th>C. LANGUAGE EXERCISE ACCURACY AND USABILITY</th>
+<th>ChatGPT</th>
+<th>Gemini</th>
+<th>Copilot</th>
+</tr>
+
+<tr><td>C1. ABC options from the vocabulary pool</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>C2. Correct-answer uniqueness</td><td>2</td><td>0</td><td>0</td></tr>
+<tr><td>C3. Distractor validity</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>C4. Use of 100% required words in ABC options</td><td>2</td><td>2</td><td>0</td></tr>
+
+<tr>
+<td><strong>Section C Total</strong></td>
+<td><strong>8</strong></td>
+<td><strong>6</strong></td>
+<td><strong>0*</strong></td>
+</tr>
+
+</table>
+
+<p style="margin-top:10px;font-size:14px;">
+*Copilot produced only two gap tasks, therefore the remaining criteria could not be evaluated.
+</p></p>
+</div>
+
+<h4 style="margin-top:30px;">Final Scores</h4>
+
+<table class="final-score-table">
+
+<tr>
+<th>Model</th>
+<th>Total Score</th>
+</tr>
+
+<tr>
+<td>ChatGPT</td>
+<td>41</td>
+</tr>
+
+<tr>
+<td>Gemini</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>Copilot</td>
+<td>21*</td>
+</tr>
+
+</table>
+
+<p style="font-size:14px;margin-top:10px;">
+*Lower score partly results from incomplete task execution.
+</p>
+
+
+
+<h3>Key Takeaways</h3>
+
+<ul>
+<li>ChatGPT achieved the best results across all criteria.</li>
+<li>Gemini performed well narratively but failed to comply with several formatting instructions</li>
+<li>Copilot achieved the worst results across all criteria.</li>
+</ul>
+
+
+<h3>Why This Case Study Matters</h3>
+
+<p>
+This experiment demonstrates how prompt engineering and systematic evaluation can be used to assess the reliability of AI systems for structured educational content generation. The findings indicate that current models still require targeted training and human-guided refinement to produce high-quality narratives and effective humour, particularly in content designed for foreign language learning.
+</p>
+
+
+<h3>Possible Directions for Further Research</h3>
+
+<ol>
+<li>Prompt language effects: How does prompt language (e.g., English vs Polish) influence model performance and instruction adherence?</li>
+<li>Prompt stability across content variations: Do results remain consistent when the same prompt structure is applied to different characters and vocabulary sets?</li>
+<li>Further prompt refinement: How does explicitly requiring gap-fill sentences to be embedded within the narrative affect model performance and scoring?</li>
+</ol>
+
+</div
 
 </div>
 </section>
@@ -801,6 +1471,43 @@ button.innerText = "Copied!";
 setTimeout(()=>button.innerText="Copy Prompt",2000);
 });
 });
+
+document.querySelectorAll(".screenshot").forEach(img => {
+
+img.addEventListener("click", function(){
+
+const overlay = document.createElement("div")
+
+overlay.style.position="fixed"
+overlay.style.top="0"
+overlay.style.left="0"
+overlay.style.width="100%"
+overlay.style.height="100%"
+overlay.style.background="rgba(0,0,0,0.85)"
+overlay.style.display="flex"
+overlay.style.alignItems="center"
+overlay.style.justifyContent="center"
+overlay.style.zIndex="9999"
+
+const bigImg=document.createElement("img")
+bigImg.src=this.src
+bigImg.style.maxWidth="90%"
+bigImg.style.maxHeight="90%"
+bigImg.style.borderRadius="12px"
+
+overlay.appendChild(bigImg)
+
+overlay.onclick=function(){
+overlay.remove()
+}
+
+document.body.appendChild(overlay)
+
+})
+
+})
+
+
 </script>
 
 </body>
